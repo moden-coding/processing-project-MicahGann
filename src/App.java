@@ -32,6 +32,30 @@ public class App extends PApplet {
     float enemy2Y3 = 300;
     float enemy3Y3 = 400;
     float enemy4Y3 = 500;
+    float enemyX4 = 700;
+    float enemy2X4 = 700;
+    float enemy3X4 = 700;
+    float enemy4X4 = 700;
+    float enemyY4 = 200;
+    float enemy2Y4 = 300;
+    float enemy3Y4 = 400;
+    float enemy4Y4 = 500;
+    float enemyX5 = 700;
+    float enemy2X5 = 700;
+    float enemy3X5 = 700;
+    float enemy4X5 = 700;
+    float enemyY5 = 200;
+    float enemy2Y5 = 300;
+    float enemy3Y5 = 400;
+    float enemy4Y5 = 500;
+    float enemyX6 = 700;
+    float enemy2X6 = 700;
+    float enemy3X6 = 700;
+    float enemy4X6 = 700;
+    float enemyY6 = 200;
+    float enemy2Y6 = 300;
+    float enemy3Y6 = 400;
+    float enemy4Y6 = 500;
     float squareY = 803;
     float squareX = 803;
     float x = 800;
@@ -51,6 +75,7 @@ public class App extends PApplet {
 
     public void settings() {
         size(900, 900);
+        startTime = millis();
     }
 
     public void draw() {
@@ -115,6 +140,55 @@ public class App extends PApplet {
         circle(enemy4X3, enemy4Y3, 15);
         enemy4X3 = enemy4X3 - 3;
 
+        fill(12, 63, 143);
+        circle(enemyX4, enemyY4, 15);
+        enemyX4 = enemyX4 - 3;
+
+        fill(12, 63, 143);
+        circle(enemy2X4, enemy2Y4, 15);
+        enemy2X4 = enemy2X4 - 3;
+
+        fill(12, 63, 143);
+        circle(enemy3X4, enemy3Y4, 15);
+        enemy3X4 = enemy3X4 - 3;
+
+        fill(12, 63, 143);
+        circle(enemy4X4, enemy4Y4, 15);
+        enemy4X4 = enemy4X4 - 3;
+
+        fill(12, 63, 143);
+        circle(enemyX5, enemyY5, 15);
+        enemyX5 = enemyX5 - 3;
+
+        fill(12, 63, 143);
+        circle(enemy2X5, enemy2Y5, 15);
+        enemy2X5 = enemy2X5 - 3;
+
+        fill(12, 63, 143);
+        circle(enemy3X5, enemy3Y5, 15);
+        enemy3X5 = enemy3X5 - 3;
+
+        fill(12, 63, 143);
+        circle(enemy4X5, enemy4Y5, 15);
+        enemy4X5 = enemy4X5 - 3;
+
+        fill(12, 63, 143);
+        circle(enemyX6, enemyY6, 15);
+        enemyX6 = enemyX6 - 3;
+
+        fill(12, 63, 143);
+        circle(enemy2X6, enemy2Y6, 15);
+        enemy2X6 = enemy2X6 - 3;
+
+        fill(12, 63, 143);
+        circle(enemy3X6, enemy3Y6, 15);
+        enemy3X6 = enemy3X6 - 3;
+
+        fill(12, 63, 143);
+        circle(enemy4X6, enemy4Y6, 15);
+        enemy4X6 = enemy4X6 - 3;
+
+
         if (left == true) {
             squareX -= squareSpeed;
             x -= squareSpeed;
@@ -151,7 +225,7 @@ public class App extends PApplet {
             squareY = squareStart;
         }
 
-        if (startTime > millis()) {
+        if (startTime + 250 > millis()) {
             circle(enemyX, enemyY, 15);
             enemyX = enemyX - 3;
         }
@@ -159,7 +233,7 @@ public class App extends PApplet {
             circle(enemy2X, enemy2Y, 15);
             enemy2X = enemy2X - 3;
         }
-        if (startTime > millis()) {
+        if (startTime + 250 > millis()) {
             circle(enemy3X, enemy3Y, 15);
             enemy3X = enemy3X - 3;
         }
@@ -199,6 +273,54 @@ public class App extends PApplet {
             circle(enemy4X3, enemy4Y3, 15);
             enemy4X3 = enemy4X3 - 3;
         }
+        if (startTime + 1500 > millis()) {
+            circle(enemyX, enemyY, 15);
+            enemyX = enemyX - 3;
+        }
+        if (startTime + 2000 > millis()) {
+            circle(enemy2X, enemy2Y, 15);
+            enemy2X = enemy2X - 3;
+        }
+        if (startTime + 1500 > millis()) {
+            circle(enemy3X, enemy3Y, 15);
+            enemy3X = enemy3X - 3;
+        }
+        if (startTime + 2000 > millis()) {
+            circle(enemy4X, enemy4Y, 15);
+            enemy4X = enemy4X - 3;
+        }
+        if (startTime + 1750 > millis()) {
+            circle(enemyX2, enemyY2, 15);
+            enemyX2 = enemyX2 - 3;
+        }
+        if (startTime + 2500 > millis()) {
+            circle(enemy2X2, enemy2Y2, 15);
+            enemy2X2 = enemy2X2 - 3;
+        }
+        if (startTime + 1750 > millis()) {
+            circle(enemy3X2, enemy3Y2, 15);
+            enemy3X2 = enemy3X2 - 3;
+        }
+        if (startTime + 2500 > millis()) {
+            circle(enemy4X2, enemy4Y2, 15);
+            enemy4X2 = enemy4X2 - 3;
+        }
+        if (startTime + 2000 > millis()) {
+            circle(enemyX3, enemyY3, 15);
+            enemyX3 = enemyX3 - 3;
+        }
+        if (startTime + 3000 > millis()) {
+            circle(enemy2X3, enemy2Y3, 15);
+            enemy2X3 = enemy2X3 - 3;
+        }
+        if (startTime + 2000 > millis()) {
+            circle(enemy3X3, enemy3Y3, 15);
+            enemy3X3 = enemy3X3 - 3;
+        }
+        if (startTime + 3000 > millis()) {
+            circle(enemy4X3, enemy4Y3, 15);
+            enemy4X3 = enemy4X3 - 3;
+        }
 
     }
 
@@ -212,6 +334,7 @@ public class App extends PApplet {
         } else if (keyCode == RIGHT) {
             right = true;
         }
+        
     }
 
     public void keyReleased() {
@@ -225,7 +348,7 @@ public class App extends PApplet {
             right = false;
         }
 
-        startTime = millis();
+        
     }
 
     public void enemy() {
