@@ -63,11 +63,6 @@ public class App extends PApplet {
     double squareSpeed = 4;
     boolean left, up, down, right;
     int startTime = 500;
-    int delay = 200;
-    int delay2 = 0; 
-    int delay3 = -200;
-    int delay4 = -400;
-
 
     public void setup() {
 
@@ -84,6 +79,7 @@ public class App extends PApplet {
         rect(790, 850, 60, -800);
         rect(790, 50, -200, 45);
         triangle(650, 50, 450, 2500, 250, 50);
+        rect(400, 700, -200, 45);
 
         noStroke();
         fill(0);
@@ -92,6 +88,33 @@ public class App extends PApplet {
         fill(0, 120, 209);
         rect(squareX, squareY, 34, 34);
 
+        
+        enemy();
+        enemyTime();
+        enemyDraw();
+        
+
+        if (left == true) {
+            squareX -= squareSpeed;
+            x -= squareSpeed;
+        }
+        if (up == true) {
+            squareY -= squareSpeed;
+            y -= squareSpeed;
+        }
+        if (down == true) {
+            squareY += squareSpeed;
+            y += squareSpeed;
+        }
+        if (right == true) {
+            squareX += squareSpeed;
+            x += squareSpeed;
+        }
+
+        colorDetector();
+    }
+
+    public void enemyDraw() {
         fill(12, 63, 143);
         circle(enemyX, enemyY, 15);
         enemyX = enemyX - 3;
@@ -187,32 +210,15 @@ public class App extends PApplet {
         fill(12, 63, 143);
         circle(enemy4X6, enemy4Y6, 15);
         enemy4X6 = enemy4X6 - 3;
+    }
 
-
-        if (left == true) {
-            squareX -= squareSpeed;
-            x -= squareSpeed;
-        }
-        if (up == true) {
-            squareY -= squareSpeed;
-            y -= squareSpeed;
-        }
-        if (down == true) {
-            squareY += squareSpeed;
-            y += squareSpeed;
-        }
-        if (right == true) {
-            squareX += squareSpeed;
-            x += squareSpeed;
-        }
-
+    public void colorDetector() {
         int topColor = get((int) (x + 20), (int) (y));
         int bottomColor = get((int) (x + 20), (int) (y + 40));
         int leftColor = get((int) (x), (int) (y + 20));
         int rightColor = get((int) (x + 40), (int) (y + 20));
 
         int red = 12, green = 63, blue = 143;
-        enemy();
 
         if ((red(topColor) == red && green(topColor) == green && blue(topColor) == blue) ||
                 (red(bottomColor) == red && green(bottomColor) == green && blue(bottomColor) == blue) ||
@@ -224,7 +230,9 @@ public class App extends PApplet {
             squareX = squareStart;
             squareY = squareStart;
         }
+    }
 
+    public void enemyTime() {
         if (startTime + 250 > millis()) {
             circle(enemyX, enemyY, 15);
             enemyX = enemyX - 3;
@@ -273,53 +281,53 @@ public class App extends PApplet {
             circle(enemy4X3, enemy4Y3, 15);
             enemy4X3 = enemy4X3 - 3;
         }
-        if (startTime + 1500 > millis()) {
-            circle(enemyX, enemyY, 15);
-            enemyX = enemyX - 3;
+        if (startTime + 1750 > millis()) {
+            circle(enemyX4, enemyY4, 15);
+            enemyX4 = enemyX4 - 3;
         }
         if (startTime + 2000 > millis()) {
-            circle(enemy2X, enemy2Y, 15);
-            enemy2X = enemy2X - 3;
-        }
-        if (startTime + 1500 > millis()) {
-            circle(enemy3X, enemy3Y, 15);
-            enemy3X = enemy3X - 3;
-        }
-        if (startTime + 2000 > millis()) {
-            circle(enemy4X, enemy4Y, 15);
-            enemy4X = enemy4X - 3;
+            circle(enemy2X4, enemy2Y4, 15);
+            enemy2X4 = enemy2X4 - 3;
         }
         if (startTime + 1750 > millis()) {
-            circle(enemyX2, enemyY2, 15);
-            enemyX2 = enemyX2 - 3;
-        }
-        if (startTime + 2500 > millis()) {
-            circle(enemy2X2, enemy2Y2, 15);
-            enemy2X2 = enemy2X2 - 3;
-        }
-        if (startTime + 1750 > millis()) {
-            circle(enemy3X2, enemy3Y2, 15);
-            enemy3X2 = enemy3X2 - 3;
-        }
-        if (startTime + 2500 > millis()) {
-            circle(enemy4X2, enemy4Y2, 15);
-            enemy4X2 = enemy4X2 - 3;
+            circle(enemy3X4, enemy3Y4, 15);
+            enemy3X4 = enemy3X4 - 3;
         }
         if (startTime + 2000 > millis()) {
-            circle(enemyX3, enemyY3, 15);
-            enemyX3 = enemyX3 - 3;
+            circle(enemy4X4, enemy4Y4, 15);
+            enemy4X4 = enemy4X4 - 3;
+        }
+        if (startTime + 2250 > millis()) {
+            circle(enemyX5, enemyY5, 15);
+            enemyX5 = enemyX5 - 3;
+        }
+        if (startTime + 2500 > millis()) {
+            circle(enemy2X5, enemy2Y5, 15);
+            enemy2X5 = enemy2X5 - 3;
+        }
+        if (startTime + 2250 > millis()) {
+            circle(enemy3X5, enemy3Y5, 15);
+            enemy3X5 = enemy3X5 - 3;
+        }
+        if (startTime + 2500 > millis()) {
+            circle(enemy4X5, enemy4Y5, 15);
+            enemy4X5 = enemy4X5 - 3;
+        }
+        if (startTime + 2750 > millis()) {
+            circle(enemyX6, enemyY6, 15);
+            enemyX6 = enemyX6 - 3;
         }
         if (startTime + 3000 > millis()) {
-            circle(enemy2X3, enemy2Y3, 15);
-            enemy2X3 = enemy2X3 - 3;
+            circle(enemy2X6, enemy2Y6, 15);
+            enemy2X6 = enemy2X6 - 3;
         }
-        if (startTime + 2000 > millis()) {
-            circle(enemy3X3, enemy3Y3, 15);
-            enemy3X3 = enemy3X3 - 3;
+        if (startTime + 2750 > millis()) {
+            circle(enemy3X6, enemy3Y6, 15);
+            enemy3X6 = enemy3X6 - 3;
         }
         if (startTime + 3000 > millis()) {
-            circle(enemy4X3, enemy4Y3, 15);
-            enemy4X3 = enemy4X3 - 3;
+            circle(enemy4X6, enemy4Y6, 15);
+            enemy4X6 = enemy4X6 - 3;
         }
 
     }
@@ -334,7 +342,7 @@ public class App extends PApplet {
         } else if (keyCode == RIGHT) {
             right = true;
         }
-        
+
     }
 
     public void keyReleased() {
@@ -348,57 +356,104 @@ public class App extends PApplet {
             right = false;
         }
 
-        
     }
 
     public void enemy() {
         if (enemyX <= 200) {
             enemyX = 700;
-            enemyY = 200;
+            enemyY = random(200, 500);
         }
         if (enemy2X <= 200) {
             enemy2X = 700;
-            enemy2Y = 300;
+            enemy2Y = random(200, 500);
         }
         if (enemy3X <= 200) {
             enemy3X = 700;
-            enemy3Y = 400;
+            enemy3Y = random(200, 500);
         }
         if (enemy4X <= 200) {
             enemy4X = 700;
-            enemy4Y = 500;
+            enemy4Y = random(200, 500);
         }
         if (enemyX2 <= 200) {
             enemyX2 = 700;
-            enemyY2 = 200;
+            enemyY2 = random(200, 500);
         }
         if (enemy2X2 <= 200) {
             enemy2X2 = 700;
-            enemy2Y2 = 300;
+            enemy2Y2 = random(200, 500);
         }
         if (enemy3X2 <= 200) {
             enemy3X2 = 700;
-            enemy3Y2 = 400;
+            enemy3Y2 = random(200, 500);
         }
         if (enemy4X2 <= 200) {
             enemy4X2 = 700;
-            enemy4Y2 = 500;
+            enemy4Y2 = random(200, 500);
         }
         if (enemyX3 <= 200) {
             enemyX3 = 700;
-            enemyY3 = 200;
+            enemyY3 = random(200, 500);
         }
         if (enemy2X3 <= 200) {
             enemy2X3 = 700;
-            enemy2Y3 = 300;
+            enemy2Y3 = random(200, 500);
         }
         if (enemy3X3 <= 200) {
             enemy3X3 = 700;
-            enemy3Y3 = 400;
+            enemy3Y3 = random(200, 500);
         }
-        if (enemy4X3<= 200) {
+        if (enemy4X3 <= 200) {
             enemy4X3 = 700;
-            enemy4Y3 = 500;
+            enemy4Y3 = random(200, 500);
+        }
+        if (enemyX4 <= 200) {
+            enemyX4 = 700;
+            enemyY4 = random(200, 500);
+        }
+        if (enemy2X4 <= 200) {
+            enemy2X4 = 700;
+            enemy2Y4 = random(200, 500);
+        }
+        if (enemy3X4 <= 200) {
+            enemy3X4 = 700;
+            enemy3Y4 = random(200, 500);
+        }
+        if (enemy4X4 <= 200) {
+            enemy4X4 = 700;
+            enemy4Y4 = random(200, 500);
+        }
+        if (enemyX5 <= 200) {
+            enemyX5 = 700;
+            enemyY5 = random(200, 500);
+        }
+        if (enemy2X5 <= 200) {
+            enemy2X5 = 700;
+            enemy2Y5 = random(200, 500);
+        }
+        if (enemy3X5 <= 200) {
+            enemy3X5 = 700;
+            enemy3Y5 = random(200, 500);
+        }
+        if (enemy4X5 <= 200) {
+            enemy4X5 = 700;
+            enemy4Y5 = random(200, 500);
+        }
+        if (enemyX6 <= 200) {
+            enemyX6 = 700;
+            enemyY6 = random(200, 500);
+        }
+        if (enemy2X6 <= 200) {
+            enemy2X6 = 700;
+            enemy2Y6 = random(200, 500);
+        }
+        if (enemy3X6 <= 200) {
+            enemy3X6 = 700;
+            enemy3Y6 = random(200, 500);
+        }
+        if (enemy4X6 <= 200) {
+            enemy4X6 = 700;
+            enemy4Y6 = random(200, 500);
         }
     }
 }
